@@ -1,0 +1,28 @@
+#include <iostream>
+#include<cstdlib>
+#include<time.h>
+
+using namespace std;
+
+int main() {
+	int num, randnum;
+	srand(time(0));
+	randnum = rand() % 100;
+	cout << randnum << endl;
+	cout << "Game started!" << endl;
+	cout << "Guess the number between 1 and 100" << endl;
+	cin >> num;
+
+	while (num < randnum) {
+		cout << "Wrong Guess, number too low. Try again " << endl;
+		cin >> num;
+	}
+	while (num > randnum) {
+		cout << "Wrong Guess, number too high. Try again " << endl;
+		cin >> num;
+	}
+	if (num == randnum) {
+		cout << "Congrats, You guessed the number correctly :)" << endl;
+	}
+
+}
